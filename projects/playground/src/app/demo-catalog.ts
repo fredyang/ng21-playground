@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 
+import { HttpResourceVsHttpClientDemoPage } from './http-resource-vs-http-client-demo-page';
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
 import { RicherTemplateExpressionsDemoPage } from './richer-template-expressions-demo-page';
 import { RouterOutletDataDemoPage } from './router-outlet-data-demo-page';
@@ -15,6 +16,14 @@ export interface DemoDefinition {
 }
 
 export const demoCatalog: readonly DemoDefinition[] = [
+  {
+    slug: 'http-resource-vs-http-client',
+    title: 'httpResource vs HttpClient',
+    summary:
+      'Compare eager signal-driven reads from httpResource with explicit subscription-driven flows built on HttpClient.',
+    tags: ['http', 'signals', 'observables'],
+    component: HttpResourceVsHttpClientDemoPage,
+  },
   {
     slug: 'input-output-model',
     title: 'input(), output(), and model()',
