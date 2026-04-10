@@ -50,7 +50,7 @@ import { demoCatalog, findDemoBySlug } from './demo-catalog';
   `,
 })
 export class DemoPage {
-  protected readonly demos = demoCatalog;
+  readonly demos = demoCatalog;
 
   private readonly route = inject(ActivatedRoute);
   private readonly routeSlug = toSignal(
@@ -58,6 +58,6 @@ export class DemoPage {
     { initialValue: this.route.snapshot.paramMap.get('slug') ?? '' },
   );
 
-  protected readonly slug = computed(() => this.routeSlug());
-  protected readonly selectedDemo = computed(() => findDemoBySlug(this.slug()));
+  readonly slug = computed(() => this.routeSlug());
+  readonly selectedDemo = computed(() => findDemoBySlug(this.slug()));
 }

@@ -13,7 +13,7 @@ import { demoCatalog } from './demo-catalog';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly demoPages = demoCatalog;
+  readonly demoPages = demoCatalog;
 
   private readonly router = inject(Router);
   private readonly currentUrl = toSignal(
@@ -25,5 +25,5 @@ export class App {
     { initialValue: this.router.url },
   );
 
-  protected readonly isIndexPage = computed(() => !this.currentUrl().startsWith('/demo/'));
+  readonly isIndexPage = computed(() => !this.currentUrl().startsWith('/demo/'));
 }

@@ -83,8 +83,8 @@ export class RouterOutletContextCard {
 
   private readonly outletData = inject(ROUTER_OUTLET_DATA) as Signal<OutletContext | null>;
 
-  protected readonly context = computed(() => this.outletData() ?? defaultContext);
-  protected readonly accentBadgeClass = computed(() =>
+  readonly context = computed(() => this.outletData() ?? defaultContext);
+  readonly accentBadgeClass = computed(() =>
     this.context().accent === 'amber' ? 'bg-amber-100 text-amber-700' : 'bg-sky-100 text-sky-700',
   );
 }
@@ -314,26 +314,26 @@ export class RouterOutletActivityPanel extends RouterOutletContextCard {}
   `,
 })
 export class RouterOutletDataDemoPage {
-  protected readonly layouts: readonly OutletContext['layout'][] = ['sidebar', 'stacked'];
-  protected readonly densities: readonly OutletContext['density'][] = ['comfortable', 'compact'];
-  protected readonly accents: readonly OutletContext['accent'][] = ['amber', 'sky'];
-  protected readonly panels = [
+  readonly layouts: readonly OutletContext['layout'][] = ['sidebar', 'stacked'];
+  readonly densities: readonly OutletContext['density'][] = ['comfortable', 'compact'];
+  readonly accents: readonly OutletContext['accent'][] = ['amber', 'sky'];
+  readonly panels = [
     { path: 'summary', label: 'Summary' },
     { path: 'inspector', label: 'Inspector' },
     { path: 'activity', label: 'Activity' },
   ] as const;
 
-  protected readonly sectionTitle = signal('Analytics workspace');
-  protected readonly layoutMode = signal<OutletContext['layout']>('sidebar');
-  protected readonly densityMode = signal<OutletContext['density']>('comfortable');
-  protected readonly accentMode = signal<OutletContext['accent']>('amber');
-  protected readonly outletContext = computed<OutletContext>(() => ({
+  readonly sectionTitle = signal('Analytics workspace');
+  readonly layoutMode = signal<OutletContext['layout']>('sidebar');
+  readonly densityMode = signal<OutletContext['density']>('comfortable');
+  readonly accentMode = signal<OutletContext['accent']>('amber');
+  readonly outletContext = computed<OutletContext>(() => ({
     sectionTitle: this.sectionTitle(),
     layout: this.layoutMode(),
     density: this.densityMode(),
     accent: this.accentMode(),
   }));
-  protected readonly outletSummary = computed(
+  readonly outletSummary = computed(
     () =>
       `${this.sectionTitle()} · ${this.layoutMode()} · ${this.densityMode()} · ${this.accentMode()}`,
   );

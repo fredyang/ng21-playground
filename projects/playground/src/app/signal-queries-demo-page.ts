@@ -111,21 +111,21 @@ export class QueryChipDirective {
   `,
 })
 export class ViewQueriesPlayground {
-  protected readonly showBonusAction = signal(true);
+  readonly showBonusAction = signal(true);
 
   private readonly headline = viewChild<ElementRef<HTMLHeadingElement>>('headline');
   private readonly actionChips = viewChildren(QueryChipDirective);
 
-  protected readonly headlineText = computed(
+  readonly headlineText = computed(
     () => this.headline()?.nativeElement.textContent?.trim() ?? 'Headline unavailable',
   );
-  protected readonly actionCount = computed(() => this.actionChips().length);
-  protected readonly actionLabelsText = computed(() => {
+  readonly actionCount = computed(() => this.actionChips().length);
+  readonly actionLabelsText = computed(() => {
     const labels = this.actionChips().map((chip) => chip.appQueryChip());
     return labels.join(' · ');
   });
 
-  protected toggleBonusAction(): void {
+  toggleBonusAction(): void {
     this.showBonusAction.update((value) => !value);
   }
 }
@@ -190,11 +190,11 @@ export class ContentQueriesPlayground {
   private readonly featuredChip = contentChild(QueryChipDirective);
   private readonly projectedChips = contentChildren(QueryChipDirective);
 
-  protected readonly featuredChipLabel = computed(
+  readonly featuredChipLabel = computed(
     () => this.featuredChip()?.appQueryChip() ?? 'No projected chip available',
   );
-  protected readonly projectedChipCount = computed(() => this.projectedChips().length);
-  protected readonly projectedChipLabels = computed(() => {
+  readonly projectedChipCount = computed(() => this.projectedChips().length);
+  readonly projectedChipLabels = computed(() => {
     const labels = this.projectedChips().map((chip) => chip.appQueryChip());
     return labels.join(' · ');
   });
@@ -351,24 +351,22 @@ export class SignalQueriesDemoPage {
     label: 'Bonus projected chip',
   };
 
-  protected readonly projectedResources = signal<ProjectedResource[]>([
-    ...this.baseProjectedResources,
-  ]);
-  protected readonly hasBonusResource = computed(() =>
+  readonly projectedResources = signal<ProjectedResource[]>([...this.baseProjectedResources]);
+  readonly hasBonusResource = computed(() =>
     this.projectedResources().some((resource) => resource.id === this.bonusProjectedResource.id),
   );
-  protected readonly projectedSummary = computed(() => {
+  readonly projectedSummary = computed(() => {
     const resources = this.projectedResources();
     const firstLabel = resources[0]?.label ?? 'none';
     return `${resources.length} projected chips · first chip: ${firstLabel}`;
   });
-  protected readonly projectedLabelsText = computed(() =>
+  readonly projectedLabelsText = computed(() =>
     this.projectedResources()
       .map((resource) => resource.label)
       .join(' · '),
   );
 
-  protected rotateProjectedResources(): void {
+  rotateProjectedResources(): void {
     this.projectedResources.update((resources) => {
       if (resources.length < 2) {
         return resources;
@@ -378,7 +376,7 @@ export class SignalQueriesDemoPage {
     });
   }
 
-  protected toggleBonusResource(): void {
+  toggleBonusResource(): void {
     this.projectedResources.update((resources) => {
       const hasBonus = resources.some((resource) => resource.id === this.bonusProjectedResource.id);
 

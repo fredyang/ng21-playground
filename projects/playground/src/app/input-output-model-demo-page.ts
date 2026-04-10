@@ -111,9 +111,9 @@ export class SignalApiDemo {
   readonly quantity = model(1);
   readonly saved = output<SavePayload>();
 
-  protected readonly totalLabel = computed(() => `$${this.quantity() * 24}`);
-  protected readonly badgeClass = computed(() => this.accentClasses()[this.accent()].badge);
-  protected readonly buttonClass = computed(() => this.accentClasses()[this.accent()].button);
+  readonly totalLabel = computed(() => `$${this.quantity() * 24}`);
+  readonly badgeClass = computed(() => this.accentClasses()[this.accent()].badge);
+  readonly buttonClass = computed(() => this.accentClasses()[this.accent()].button);
 
   private readonly accentClasses = computed(() => ({
     rose: {
@@ -130,15 +130,15 @@ export class SignalApiDemo {
     },
   }));
 
-  protected increment(): void {
+  increment(): void {
     this.quantity.update((value) => value + 1);
   }
 
-  protected decrement(): void {
+  decrement(): void {
     this.quantity.update((value) => Math.max(1, value - 1));
   }
 
-  protected saveSelection(): void {
+  saveSelection(): void {
     this.saved.emit({
       product: this.productName(),
       quantity: this.quantity(),
@@ -325,22 +325,22 @@ export class SignalApiDemo {
   `,
 })
 export class InputOutputModelDemoPage {
-  protected readonly selectedProduct = signal('Angular Signals Starter Kit');
-  protected readonly accent = signal<AccentTone>('rose');
-  protected readonly quantity = signal(2);
-  protected readonly saveCount = signal(0);
-  protected readonly lastSavedMessage = signal('Nothing saved yet.');
-  protected readonly accentOptions: AccentTone[] = ['rose', 'emerald', 'blue'];
-  protected readonly demoProducts = [
+  readonly selectedProduct = signal('Angular Signals Starter Kit');
+  readonly accent = signal<AccentTone>('rose');
+  readonly quantity = signal(2);
+  readonly saveCount = signal(0);
+  readonly lastSavedMessage = signal('Nothing saved yet.');
+  readonly accentOptions: AccentTone[] = ['rose', 'emerald', 'blue'];
+  readonly demoProducts = [
     'Angular Signals Starter Kit',
     'Component API Playground',
     'Two-Way Binding Lab',
   ] as const;
-  protected readonly parentSummary = computed(
+  readonly parentSummary = computed(
     () => `${this.selectedProduct()} · qty ${this.quantity()} · ${this.accent()} tone`,
   );
 
-  protected cycleProduct(): void {
+  cycleProduct(): void {
     const currentIndex = this.demoProducts.indexOf(
       this.selectedProduct() as (typeof this.demoProducts)[number],
     );
@@ -348,11 +348,11 @@ export class InputOutputModelDemoPage {
     this.selectedProduct.set(this.demoProducts[nextIndex]);
   }
 
-  protected setAccent(accent: AccentTone): void {
+  setAccent(accent: AccentTone): void {
     this.accent.set(accent);
   }
 
-  protected handleSaved(event: SavePayload): void {
+  handleSaved(event: SavePayload): void {
     this.saveCount.update((count) => count + 1);
     this.lastSavedMessage.set(`Saved ${event.quantity} × ${event.product}`);
   }

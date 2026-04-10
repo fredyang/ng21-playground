@@ -330,37 +330,35 @@ class MigrationGuideArtifact extends DemoArtifact {
   `,
 })
 export class RicherTemplateExpressionsDemoPage {
-  protected readonly ReleaseNotesArtifact = ReleaseNotesArtifact;
-  protected readonly MigrationGuideArtifact = MigrationGuideArtifact;
+  readonly ReleaseNotesArtifact = ReleaseNotesArtifact;
+  readonly MigrationGuideArtifact = MigrationGuideArtifact;
 
-  protected readonly tracks = signal<readonly ExpressionTrack[]>([
+  readonly tracks = signal<readonly ExpressionTrack[]>([
     { id: 1, title: 'Signal helpers', family: 'signals', minutes: 9, selected: true },
     { id: 2, title: 'Router data', family: 'router', minutes: 7, selected: true },
     { id: 3, title: 'Regex guards', family: 'templates', minutes: 6, selected: false },
     { id: 4, title: 'Expression parser', family: 'compiler', minutes: 11, selected: false },
   ]);
-  protected readonly keyword = signal('signal');
-  protected readonly artifactMode = signal<'release' | 'migration'>('release');
-  protected readonly selectedCount = computed(
-    () => this.tracks().filter((track) => track.selected).length,
-  );
-  protected readonly activeArtifact = computed<DemoArtifact>(() => {
+  readonly keyword = signal('signal');
+  readonly artifactMode = signal<'release' | 'migration'>('release');
+  readonly selectedCount = computed(() => this.tracks().filter((track) => track.selected).length);
+  readonly activeArtifact = computed<DemoArtifact>(() => {
     if (this.artifactMode() === 'release') {
       return new ReleaseNotesArtifact('Angular template refresh', 5);
     }
 
     return new MigrationGuideArtifact('Template upgrade checklist', 8);
   });
-  protected readonly releaseArtifact = computed(() => {
+  readonly releaseArtifact = computed(() => {
     const artifact = this.activeArtifact();
     return artifact instanceof ReleaseNotesArtifact ? artifact : null;
   });
-  protected readonly migrationArtifact = computed(() => {
+  readonly migrationArtifact = computed(() => {
     const artifact = this.activeArtifact();
     return artifact instanceof MigrationGuideArtifact ? artifact : null;
   });
 
-  protected toggleTrack(trackId: number): void {
+  toggleTrack(trackId: number): void {
     this.tracks.update((tracks) =>
       tracks.map((track) =>
         track.id === trackId ? { ...track, selected: !track.selected } : track,
@@ -368,7 +366,7 @@ export class RicherTemplateExpressionsDemoPage {
     );
   }
 
-  protected describeMinutes(label: string, ...minutes: number[]): string {
+  describeMinutes(label: string, ...minutes: number[]): string {
     if (minutes.length === 0) {
       return `${label}: nothing selected yet`;
     }
@@ -376,11 +374,11 @@ export class RicherTemplateExpressionsDemoPage {
     return `${label}: ${this.sumMinutes(...minutes)} min`;
   }
 
-  protected sumMinutes(...minutes: number[]): number {
+  sumMinutes(...minutes: number[]): number {
     return minutes.reduce((total, value) => total + value, 0);
   }
 
-  protected basePreview(): { readonly focus: string; readonly version: string } {
+  basePreview(): { readonly focus: string; readonly version: string } {
     return {
       focus: 'template-expressions',
       version: 'v21',

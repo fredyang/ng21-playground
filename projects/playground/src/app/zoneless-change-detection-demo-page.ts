@@ -263,7 +263,7 @@ interface TriggerDefinition {
   `,
 })
 export class ZonelessChangeDetectionDemoPage {
-  protected readonly triggers: readonly TriggerDefinition[] = [
+  readonly triggers: readonly TriggerDefinition[] = [
     {
       label: 'Updating a signal read by the template',
       detail:
@@ -286,9 +286,9 @@ export class ZonelessChangeDetectionDemoPage {
     },
   ];
 
-  protected readonly signalCount = signal(0);
-  protected readonly signalPending = signal(0);
-  protected readonly signalMessage = computed(() => {
+  readonly signalCount = signal(0);
+  readonly signalPending = signal(0);
+  readonly signalMessage = computed(() => {
     const pending = this.signalPending();
     if (pending > 0) {
       return `Waiting for ${pending} async signal update${pending === 1 ? '' : 's'} to land.`;
@@ -297,12 +297,12 @@ export class ZonelessChangeDetectionDemoPage {
     return 'Latest change came from a timeout that updated a signal.';
   });
 
-  protected eventCount = 0;
-  protected eventMessage = 'A bound click handler can update plain fields without extra APIs.';
-  protected manualCount = 0;
-  protected manualPending = false;
-  protected manualStatus = 'Idle. Queue an external callback to see markForCheck() in action.';
-  protected readonly dashboardSummary = computed(
+  eventCount = 0;
+  eventMessage = 'A bound click handler can update plain fields without extra APIs.';
+  manualCount = 0;
+  manualPending = false;
+  manualStatus = 'Idle. Queue an external callback to see markForCheck() in action.';
+  readonly dashboardSummary = computed(
     () =>
       `${this.signalCount()} signal updates, ${this.eventCount} event callbacks, ${this.manualCount} manual refreshes`,
   );
@@ -320,7 +320,7 @@ export class ZonelessChangeDetectionDemoPage {
     });
   }
 
-  protected queueSignalUpdate(): void {
+  queueSignalUpdate(): void {
     this.signalPending.update((pending) => pending + 1);
 
     const timeoutId = window.setTimeout(() => {
@@ -332,12 +332,12 @@ export class ZonelessChangeDetectionDemoPage {
     this.timeoutIds.add(timeoutId);
   }
 
-  protected recordEventCallback(): void {
+  recordEventCallback(): void {
     this.eventCount += 1;
     this.eventMessage = `Click ${this.eventCount} was rendered because the template event itself notified Angular.`;
   }
 
-  protected queueManualUpdate(): void {
+  queueManualUpdate(): void {
     this.manualPending = true;
     this.manualStatus = 'Timeout scheduled. Angular will need markForCheck() when it finishes.';
 
