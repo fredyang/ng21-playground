@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 
+import { DynamicComponentBindingsDemoPage } from './dynamic-component-bindings-demo-page';
 import { HttpResourceVsHttpClientDemoPage } from './http-resource-vs-http-client-demo-page';
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
 import { LinkedSignalDemoPage } from './linked-signal-demo-page';
@@ -17,6 +18,14 @@ export interface DemoDefinition {
 }
 
 export const demoCatalog: readonly DemoDefinition[] = [
+  {
+    slug: 'dynamic-component-bindings',
+    title: 'dynamic component creation with bindings/directives',
+    summary:
+      'Create a runtime component with inputBinding, twoWayBinding, outputBinding, and host directives configured up front.',
+    tags: ['components', 'dynamic rendering', 'signals'],
+    component: DynamicComponentBindingsDemoPage,
+  },
   {
     slug: 'http-resource-vs-http-client',
     title: 'httpResource vs HttpClient',
