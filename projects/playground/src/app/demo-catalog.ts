@@ -1,6 +1,7 @@
 import { Type } from '@angular/core';
 
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
+import { SignalQueriesDemoPage } from './signal-queries-demo-page';
 
 export interface DemoDefinition {
   slug: string;
@@ -18,6 +19,14 @@ export const demoCatalog: readonly DemoDefinition[] = [
       'Parent-to-child inputs, child-to-parent typed events, and shared state through signal model bindings.',
     tags: ['signals', 'component APIs', 'two-way binding'],
     component: InputOutputModelDemoPage,
+  },
+  {
+    slug: 'signal-queries',
+    title: 'signal query APIs',
+    summary:
+      'Reactive viewChild, viewChildren, contentChild, and contentChildren queries with template and projected content.',
+    tags: ['signals', 'queries', 'content projection'],
+    component: SignalQueriesDemoPage,
   },
 ];
 
