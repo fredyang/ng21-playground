@@ -1,6 +1,7 @@
 import { Type } from '@angular/core';
 
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
+import { RicherTemplateExpressionsDemoPage } from './richer-template-expressions-demo-page';
 import { RouterOutletDataDemoPage } from './router-outlet-data-demo-page';
 import { SignalQueriesDemoPage } from './signal-queries-demo-page';
 import { ZonelessChangeDetectionDemoPage } from './zoneless-change-detection-demo-page';
@@ -37,6 +38,14 @@ export const demoCatalog: readonly DemoDefinition[] = [
       'Pass contextual layout data from a parent outlet into routed child components without changing route definitions.',
     tags: ['router', 'context', 'nested routes'],
     component: RouterOutletDataDemoPage,
+  },
+  {
+    slug: 'richer-template-expressions',
+    title: 'richer template expressions',
+    summary:
+      'Arrow functions, array and object spread, rest args in function calls, regex literals, and instanceof checks directly in Angular templates.',
+    tags: ['templates', 'expressions', 'parser'],
+    component: RicherTemplateExpressionsDemoPage,
   },
   {
     slug: 'zoneless-change-detection',
