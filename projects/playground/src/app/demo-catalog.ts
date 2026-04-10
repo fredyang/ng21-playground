@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 
+import { AngularMaterialFormDemoPage } from './angular-material-form-demo-page';
 import { DynamicComponentBindingsDemoPage } from './dynamic-component-bindings-demo-page';
 import { HttpResourceVsHttpClientDemoPage } from './http-resource-vs-http-client-demo-page';
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
@@ -19,6 +20,14 @@ export interface DemoDefinition {
 }
 
 export const demoCatalog: readonly DemoDefinition[] = [
+  {
+    slug: 'angular-material-form',
+    title: 'Angular Material support form',
+    summary:
+      'Combine Tailwind layout with Angular Material form fields, toggles, validation, and snack-bar feedback in a practical intake flow.',
+    tags: ['angular material', 'forms', 'tailwind'],
+    component: AngularMaterialFormDemoPage,
+  },
   {
     slug: 'dynamic-component-bindings',
     title: 'dynamic component creation with bindings/directives',

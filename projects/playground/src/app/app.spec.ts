@@ -31,6 +31,7 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Angular Material support form');
     expect(compiled.textContent).toContain('dynamic component creation with bindings/directives');
     expect(compiled.textContent).toContain('httpResource vs HttpClient');
     expect(compiled.textContent).toContain('linkedSignal for dependent writable state');
