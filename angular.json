@@ -8,7 +8,11 @@
   "projects": {
     "playground": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/playground",
       "sourceRoot": "projects/playground/src",
       "prefix": "app",
@@ -24,7 +28,9 @@
                 "input": "projects/playground/public"
               }
             ],
-            "styles": ["projects/playground/src/styles.css"]
+            "styles": [
+              "projects/playground/src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {

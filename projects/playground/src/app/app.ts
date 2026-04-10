@@ -10,7 +10,7 @@ import { demoCatalog } from './demo-catalog';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
 })
 export class App {
   readonly demoPages = demoCatalog;
