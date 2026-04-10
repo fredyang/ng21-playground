@@ -32,6 +32,7 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.textContent).toContain('httpResource vs HttpClient');
+    expect(compiled.textContent).toContain('linkedSignal for dependent writable state');
     expect(compiled.textContent).toContain('input(), output(), and model()');
     expect(compiled.textContent).toContain('richer template expressions');
     expect(compiled.textContent).toContain('signal query APIs');

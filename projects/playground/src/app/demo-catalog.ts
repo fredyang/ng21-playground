@@ -2,6 +2,7 @@ import { Type } from '@angular/core';
 
 import { HttpResourceVsHttpClientDemoPage } from './http-resource-vs-http-client-demo-page';
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
+import { LinkedSignalDemoPage } from './linked-signal-demo-page';
 import { RicherTemplateExpressionsDemoPage } from './richer-template-expressions-demo-page';
 import { RouterOutletDataDemoPage } from './router-outlet-data-demo-page';
 import { SignalQueriesDemoPage } from './signal-queries-demo-page';
@@ -23,6 +24,14 @@ export const demoCatalog: readonly DemoDefinition[] = [
       'Compare eager signal-driven reads from httpResource with explicit subscription-driven flows built on HttpClient.',
     tags: ['http', 'signals', 'observables'],
     component: HttpResourceVsHttpClientDemoPage,
+  },
+  {
+    slug: 'linked-signal',
+    title: 'linkedSignal for dependent writable state',
+    summary:
+      'Compare a plain signal with basic and advanced linkedSignal patterns when a source list changes under user selection.',
+    tags: ['signals', 'state', 'linkedSignal'],
+    component: LinkedSignalDemoPage,
   },
   {
     slug: 'input-output-model',
