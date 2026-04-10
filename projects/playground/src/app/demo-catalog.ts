@@ -1,6 +1,7 @@
 import { Type } from '@angular/core';
 
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
+import { RouterOutletDataDemoPage } from './router-outlet-data-demo-page';
 import { SignalQueriesDemoPage } from './signal-queries-demo-page';
 
 export interface DemoDefinition {
@@ -27,6 +28,14 @@ export const demoCatalog: readonly DemoDefinition[] = [
       'Reactive viewChild, viewChildren, contentChild, and contentChildren queries with template and projected content.',
     tags: ['signals', 'queries', 'content projection'],
     component: SignalQueriesDemoPage,
+  },
+  {
+    slug: 'router-outlet-data',
+    title: 'routerOutletData on RouterOutlet',
+    summary:
+      'Pass contextual layout data from a parent outlet into routed child components without changing route definitions.',
+    tags: ['router', 'context', 'nested routes'],
+    component: RouterOutletDataDemoPage,
   },
 ];
 
