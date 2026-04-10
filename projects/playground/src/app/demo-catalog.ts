@@ -6,6 +6,7 @@ import { InputOutputModelDemoPage } from './input-output-model-demo-page';
 import { LinkedSignalDemoPage } from './linked-signal-demo-page';
 import { RicherTemplateExpressionsDemoPage } from './richer-template-expressions-demo-page';
 import { RouterOutletDataDemoPage } from './router-outlet-data-demo-page';
+import { SignalFormsDemoPage } from './signal-forms-demo-page';
 import { SignalQueriesDemoPage } from './signal-queries-demo-page';
 import { ZonelessChangeDetectionDemoPage } from './zoneless-change-detection-demo-page';
 
@@ -41,6 +42,14 @@ export const demoCatalog: readonly DemoDefinition[] = [
       'Compare a plain signal with basic and advanced linkedSignal patterns when a source list changes under user selection.',
     tags: ['signals', 'state', 'linkedSignal'],
     component: LinkedSignalDemoPage,
+  },
+  {
+    slug: 'signal-forms',
+    title: 'signal-based forms',
+    summary:
+      'Build a form from one writable model signal and inspect validation, field state, and submit flow through Angular Signal Forms.',
+    tags: ['forms', 'signals', 'experimental'],
+    component: SignalFormsDemoPage,
   },
   {
     slug: 'input-output-model',

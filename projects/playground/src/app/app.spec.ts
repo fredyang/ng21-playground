@@ -34,6 +34,7 @@ describe('App', () => {
     expect(compiled.textContent).toContain('dynamic component creation with bindings/directives');
     expect(compiled.textContent).toContain('httpResource vs HttpClient');
     expect(compiled.textContent).toContain('linkedSignal for dependent writable state');
+    expect(compiled.textContent).toContain('signal-based forms');
     expect(compiled.textContent).toContain('input(), output(), and model()');
     expect(compiled.textContent).toContain('richer template expressions');
     expect(compiled.textContent).toContain('signal query APIs');
