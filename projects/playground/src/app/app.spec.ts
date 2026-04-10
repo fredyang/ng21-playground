@@ -34,5 +34,6 @@ describe('App', () => {
     expect(compiled.textContent).toContain('input(), output(), and model()');
     expect(compiled.textContent).toContain('signal query APIs');
     expect(compiled.textContent).toContain('routerOutletData on RouterOutlet');
+    expect(compiled.textContent).toContain('zoneless change detection notifications');
   });
 });

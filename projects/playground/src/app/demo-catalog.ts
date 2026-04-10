@@ -3,6 +3,7 @@ import { Type } from '@angular/core';
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
 import { RouterOutletDataDemoPage } from './router-outlet-data-demo-page';
 import { SignalQueriesDemoPage } from './signal-queries-demo-page';
+import { ZonelessChangeDetectionDemoPage } from './zoneless-change-detection-demo-page';
 
 export interface DemoDefinition {
   slug: string;
@@ -36,6 +37,14 @@ export const demoCatalog: readonly DemoDefinition[] = [
       'Pass contextual layout data from a parent outlet into routed child components without changing route definitions.',
     tags: ['router', 'context', 'nested routes'],
     component: RouterOutletDataDemoPage,
+  },
+  {
+    slug: 'zoneless-change-detection',
+    title: 'zoneless change detection notifications',
+    summary:
+      'Compare signal updates, template event callbacks, and markForCheck() as the notifications Angular reacts to in zoneless mode.',
+    tags: ['zoneless', 'change detection', 'signals'],
+    component: ZonelessChangeDetectionDemoPage,
   },
 ];
 
