@@ -99,11 +99,16 @@ export class DynamicCardThemeDirective {
   `,
 })
 export class RuntimePromoCardComponent {
+  // inputBinding creates an input in the child that stays in sync with the parent signal
   readonly title = input.required<string>();
   readonly detail = input.required<string>();
   readonly tone = input<Tone>('violet');
   readonly canDismiss = input(true);
+
+  // twoWayBinding creates a model in the child that stays in sync with the parent signal
   readonly expanded = model(true);
+
+  // outputBinding creates an EventEmitter and registers the provided handler, so the parent can listen to events from the child
   readonly dismissed = output<string>();
 
   readonly badgeClass = computed(() =>
