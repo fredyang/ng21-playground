@@ -15,6 +15,12 @@
       "request": "launch",
       "preLaunchTask": "npm: test",
       "url": "http://localhost:9876/debug.html"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Vitest Debug",
+      "runtimeExecutable": "/home/fredyang/.nvm/versions/node/v24.14.1/bin/node"
     }
   ]
 }

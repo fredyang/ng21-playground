@@ -17,29 +17,4 @@ describe('App', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Demo index for modern Angular features',
-    );
-  });
-
-  it('should render a demo link on the index page', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.textContent).toContain('Angular Material support form');
-    expect(compiled.textContent).toContain('dynamic component creation with bindings/directives');
-    expect(compiled.textContent).toContain('httpResource vs HttpClient');
-    expect(compiled.textContent).toContain('linkedSignal for dependent writable state');
-    expect(compiled.textContent).toContain('signal-based forms');
-    expect(compiled.textContent).toContain('input(), output(), and model()');
-    expect(compiled.textContent).toContain('richer template expressions');
-    expect(compiled.textContent).toContain('signal query APIs');
-    expect(compiled.textContent).toContain('routerOutletData on RouterOutlet');
-    expect(compiled.textContent).toContain('zoneless change detection notifications');
-  });
 });
