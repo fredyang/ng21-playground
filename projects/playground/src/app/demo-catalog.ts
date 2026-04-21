@@ -6,6 +6,7 @@ import { HttpResourceVsHttpClientDemoPage } from './http-resource-vs-http-client
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
 import { LinkedSignalDemoPage } from './linked-signal-demo-page';
 import { RicherTemplateExpressionsDemoPage } from './richer-template-expressions-demo-page';
+import { RouterNavigationSignalsDemoPage } from './router-navigation-signals-demo-page';
 import { RouterOutletDataDemoPage } from './router-outlet-data-demo-page';
 import { SignalFormsDemoPage } from './signal-forms-demo-page';
 import { SignalQueriesDemoPage } from './signal-queries-demo-page';
@@ -51,6 +52,14 @@ export const demoCatalog: readonly DemoDefinition[] = [
       'Compare a plain signal with basic and advanced linkedSignal patterns when a source list changes under user selection.',
     tags: ['signals', 'state', 'linkedSignal'],
     component: LinkedSignalDemoPage,
+  },
+  {
+    slug: 'router-navigation-signals',
+    title: 'Router signals: currentNavigation and lastSuccessfulNavigation',
+    summary:
+      'Inspect the in-flight currentNavigation signal, compare it to lastSuccessfulNavigation, and capture transient router state during same-route navigations.',
+    tags: ['router', 'signals', 'navigation'],
+    component: RouterNavigationSignalsDemoPage,
   },
   {
     slug: 'signal-forms',

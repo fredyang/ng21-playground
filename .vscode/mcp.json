@@ -2,8 +2,11 @@
   // For more information, visit: https://angular.dev/ai/mcp
   "servers": {
     "angular-cli": {
-      "command": "npx",
-      "args": ["-y", "@angular/cli", "mcp"]
+      "command": "~/.nvm/versions/node/v24.14.1/bin/node",
+      "args": [
+        "node_modules/@angular/cli/bin/ng.js",
+        "mcp"
+      ]
     }
   }
 }
