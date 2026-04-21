@@ -1,6 +1,7 @@
 import { Type } from '@angular/core';
 
 import { AngularMaterialFormDemoPage } from './angular-material-form-demo-page';
+import { AnimateEnterLeaveDemoPage } from './animate-enter-leave-demo-page';
 import { DynamicComponentBindingsDemoPage } from './dynamic-component-bindings-demo-page';
 import { HttpResourceVsHttpClientDemoPage } from './http-resource-vs-http-client-demo-page';
 import { InputOutputModelDemoPage } from './input-output-model-demo-page';
@@ -21,6 +22,14 @@ export interface DemoDefinition {
 }
 
 export const demoCatalog: readonly DemoDefinition[] = [
+  {
+    slug: 'animate-enter-leave',
+    title: 'animate.enter and animate.leave in a real workflow',
+    summary:
+      'Show a bulk-action tray and undo toasts in a support inbox, where enter and leave motion make transient UI easier to notice and trust.',
+    tags: ['animations', 'ux', 'workflow'],
+    component: AnimateEnterLeaveDemoPage,
+  },
   {
     slug: 'angular-material-form',
     title: 'Angular Material support form',
