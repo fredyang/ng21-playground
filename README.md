@@ -1,6 +1,12 @@
-# Ng22Ws
+# ng21-playground
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+
+I use this project for testing vibe coding and demoing Angular features. It includes a "playground"
+app with a catalog of feature demos, and a custom MCP prompt for adding new demos. The experience of
+the process can be found in the [Copilot Instructions](.github/copilot-instructions.md) and the
+[Create Angular Demo prompt](.github/prompts/create-angular-demo.prompt.md). You can also read my
+blog post about this project: [Vibe Coding Is Real, But So Is Engineering](https://blog.semanticsworks.com/2026/04/vibe-coding.html)
 
 ## Development server
 
