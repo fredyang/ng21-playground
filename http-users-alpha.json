@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Mina Park",
+    "role": "Platform Engineer",
+    "focus": "Signals"
+  },
+  {
+    "id": 2,
+    "name": "Jonah Reed",
+    "role": "Frontend Architect",
+    "focus": "Templates"
+  },
+  {
+    "id": 3,
+    "name": "Ari Singh",
+    "role": "DX Engineer",
+    "focus": "Tooling"
+  }
+]
